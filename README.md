@@ -1,5 +1,12 @@
 
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
   <h3 align="center">Nearmap Ortho Download and Tracking</h3>
 
   <p align="center">
@@ -100,7 +107,7 @@ Install the Python Nearmap Repository.
 
 <div align="left">
 
-  <h4 align="left">See Python Nearmap Repo Instructions, however, in addition you will need to install: 
+  <h3 align="left">See Python Nearmap Repo Instructions, however, in addition you will need to install: 
 </h3>
 
   <p align="left">
@@ -119,33 +126,32 @@ Install the Python Nearmap Repository.
 </div>
 
 
-Front End Example, Use this to make Data Query.
-
 ![alt text](
 images/Front_End.png)
+<p align="left">Front End Example, Use this to make Data Query.</p>
 
-<p align="center">(<a href="#top">back to top</a>)</p>
-
-After Data Query this is the Schema of the MongoDB Post. 
 
 ![alt text](
 images/Schema.png)
+<p align="left">Schema Saved in MongoDB</p>
 
-Orignal AOI (Geojson)
+
 ![alt text](
 images/CustomerAOI.png)
+<p align="left">Original Customer AOI</p>
 
-Returned Ortho Saved Locally, Merged and Reprojected. (resolution varies by request parameters)
+
 ![alt text](
 images/Customer_Ortho.png)
+<p align="left">Returned Ortho Saved Locally, Merged and Reprojected. (resolution varies by request parameters</p>
 
-Tracking can be done Via MongoDB Atlas application or By directly Querying the Database and reading Geojson.
 ![alt text](
 images/Tracking_Dash.png)
+<p align="left">Tracking can be done Via MongoDB Atlas application or By directly Querying the Database and reading Geojson.
 
-Folium Geojson Draw
 ![alt text](
 images/Folium_Dash.png)
+<p align="left">Folium Geojson Draw</p>
 
 
 <!-- ROADMAP -->
