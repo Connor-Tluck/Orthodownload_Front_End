@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1041</width>
+    <height>717</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>50</number>
+    </property>
+    <property name="topMargin">
+     <number>50</number>
+    </property>
+    <property name="rightMargin">
+     <number>50</number>
+    </property>
+    <property name="bottomMargin">
+     <number>50</number>
+    </property>
+    <item row="8" column="1" colspan="2">
+     <widget class="QComboBox" name="processing_method">
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>mask</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bounds</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="2">
+     <widget class="QDateEdit" name="start_date"/>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="epsg_code">
+      <property name="text">
+       <string>4326</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>Format: Number Only</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1" colspan="2">
+     <widget class="QComboBox" name="content_type">
+      <item>
+       <property name="text">
+        <string>OrthoImagery</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>EPSG Code</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QLineEdit" name="project_number">
+      <property name="text">
+       <string>Project Number Here (Optional)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Start Date</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Content Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="2">
+     <widget class="QPushButton" name="button_run">
+      <property name="text">
+       <string>Run</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QLineEdit" name="mongo_user">
+      <property name="text">
+       <string>Mongo Database User Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QSpinBox" name="tile_size">
+      <property name="minimum">
+       <number>14</number>
+      </property>
+      <property name="maximum">
+       <number>21</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QDateEdit" name="end_date">
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2022</year>
+        <month>1</month>
+        <day>1</day>
+       </datetime>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QSpinBox" name="zip_size">
+      <property name="minimum">
+       <number>10</number>
+      </property>
+      <property name="maximum">
+       <number>16</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Account Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Project Number</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Mongo User</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="tilesizelabe">
+      <property name="text">
+       <string>Tile Size</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Select Input File</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QPushButton" name="button_file_input">
+      <property name="text">
+       <string>geojson only!</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="2">
+     <widget class="QLineEdit" name="mongo_pass">
+      <property name="text">
+       <string>Mongo Password</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="1">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Gimme Data!</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="2">
+     <widget class="QPushButton" name="button_save_location">
+      <property name="text">
+       <string>Select Directory</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Masking</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="zipsizelabel">
+      <property name="text">
+       <string>Zip Size</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Select Save Location</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Mongo Pass</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="2">
+     <widget class="QLineEdit" name="collection_name">
+      <property name="text">
+       <string>Collection Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_14">
+      <property name="text">
+       <string>Client Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QLineEdit" name="client_name">
+      <property name="text">
+       <string>Client Name (Optional)</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
