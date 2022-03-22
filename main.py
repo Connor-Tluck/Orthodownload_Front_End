@@ -8,17 +8,11 @@ from nearmap import NEARMAP
 import time
 import sys
 import os
-import datetime
 from nearmap._download_lib import get_coords
 import datetime
-import datetime
 import json
-from shapely.geometry import Polygon
 from nearmap import __version__
 from pymongo import MongoClient
-import shapely
-from shapely.geometry import Polygon, Point
-from shapely import wkt
 import geopandas as gpd
 from shapely.geometry import Polygon
 
@@ -26,7 +20,6 @@ try:
     from osgeo_utils import gdal_merge
 except ImportError:
     from osgeo.utils import gdal_merge
-
 try:
     from ujson import load, dump, dumps
 except ModuleNotFoundError:
@@ -115,9 +108,6 @@ class WelcomeScreen(QMainWindow):
                 zoom = self.tile_size.value()
                 print(f'tile size is: {str(zoom)}')
 
-                group_zoom_level = self.zip_size.value()
-                print(f'zip size is: {str(group_zoom_level)}')
-
                 processing_method = self.processing_method.currentText()
                 print(f'processing_method is: {processing_method}')
 
@@ -127,8 +117,10 @@ class WelcomeScreen(QMainWindow):
                 tile_size = self.tile_size.text()
                 print(f'tile_size is: {tile_size}')
 
-                zip_size = self.zip_size.text()
-                print(f'zip_size is: {zip_size}')
+                # zip_size = self.zip_size.text()
+                # print(f'zip_size is: {zip_size}')
+
+                zip_size = 16 #fixed zip size for performance improvments.
 
 
                 print(f'Selected Content path is: {input_file}')
@@ -193,14 +185,14 @@ class WelcomeScreen(QMainWindow):
                                          'project_number': str(project_number),
                                          'user': str(mongo_user),
                                          'collection_name': str(collection_name),
-                                         'client_name':str(collection_name),
+                                         'client_name':str(client_name),
                                          'input_file':str(input_file),
                                          'output_file':str(save_file_path),
                                          'requested_time': currentDateTime,
                                          'start_date': datetime.datetime(start_date.year, start_date.month,
                                                                          start_date.day),
                                          'end_date': datetime.datetime(end_date.year, end_date.month, end_date.day),
-                                         'projection': int(epsg_code),
+                                         'projection': str(epsg_code),
                                          'selected_content': str(selected_content),
                                          'tile_size': int(tile_size),
                                          'zip_size': int(zip_size),
@@ -244,7 +236,7 @@ class WelcomeScreen(QMainWindow):
                     try:
                         get_tiles_production_mapping.tile_downloader(nearmap, input, output_dir, out_manifest, zoom, buffer_distance, remove_holes,
                                         out_image_format,
-                                        compression, jpeg_quality, group_zoom_level, processing_method, surveyid,
+                                        compression, jpeg_quality, zip_size, processing_method, surveyid,
                                         tileResourceType, tertiary, since,
                                         until, mosaic, include, exclude, rate_limit_mode)
                         download_time_end = time.time()
@@ -279,7 +271,7 @@ class WelcomeScreen(QMainWindow):
 
                         tile_manifest = None
                         epsg_code = str(epsg_code)
-                        output_crs = 'EPSG:' + epsg_code # Example: NAD83 Florida East (ftUS) | Lookup your CRS at: http://www.spatialreference.org
+                        output_crs = epsg_code # Example: NAD83 Florida East (ftUS) | Lookup your CRS at: http://www.spatialreference.org
                         start_reproject = time.time()
                         try:
                             reproject_tiles.reprojection(input_dir, output_dir, tile_manifest, output_crs=output_crs)
@@ -351,6 +343,3 @@ if __name__ == "__main__":
         sys.exit(app.exec_())
     except:
         print("Exiting....")
-
-
-
