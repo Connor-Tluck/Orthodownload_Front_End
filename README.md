@@ -58,8 +58,6 @@ Use the `main.py` and `main_downloader.ui` along with the Nearmap Python Repo to
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [Pyhon](https://www.python.org/)
 * [MongoDB](https://mongodb.com/)
 
@@ -72,7 +70,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ## Getting Started
 
 Install the Python Nearmap Repository as well as two additonal libraries seen below.
-
 
 ### Prerequisites
 
